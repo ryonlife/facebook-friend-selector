@@ -1,0 +1,24 @@
+#dialog{font-family: "lucida grande", tahoma, verdana, arial, sans-serif;font-size:13px;display:inline-block;border:8px solid #868686;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;position:fixed;top:50%;left:50%;}
+#dialog > div{border:1px solid #3b5998;}
+#dialog > div h3{font-size:108%;color:#fff;background-color:#6d84b4;padding:5px 10px;margin:0}
+#friend_selector{width:450px;background-color:#f7f7f7;overflow:hidden;}
+#friend_selector #friend_selector_controls{padding:10px;}
+#friend_selector #friend_selector_controls input{background:#fff url("sprite.png") no-repeat 0% 4px;padding-left:17px;padding-bottom:4px;width:270px}
+#friend_selector #friend_selector_controls a{font-size:85%;font-weight:bold;float:right;height:20px;line-height:20px;padding:0 4px;border:1px solid #f7f7f7;color:#3B5998;}
+#friend_selector #friend_selector_controls a.highlight{background-color:#6d84b4;-webkit-border-radius:5px;-moz-border-radiius:5px;border-radius:5px;color:#fff;cursor:default;border:1px solid #6d84b4;text-decoration:none;}
+#friend_selector #friend_selector_controls a.clear_search{background:url("sprite.png") no-repeat -834px -67px;opacity:.4;display:block;width:9px;height:9px;margin-top:7px;position:relative;padding:0;}
+#friend_selector #friend_selector_controls a.clear_search:hover{background:url("sprite.png") no-repeat -834px -67px;opacity:1}
+#friend_selector input{font-size:85%;border:1px solid #bdc7d8;padding:3px;outline:none;}
+#friend_selector ul{margin:0;padding:3px 3px 0 3px;font-size:85%;height:210px;overflow-y:auto;border-top:1px solid #c1c1c1;border-bottom:1px solid #c1c1c1;background-color:#fff;}
+#friend_selector ul li{list-style-type:none;width:134px;height:64px;margin:3px;float:left;}
+#friend_selector ul li:hover{background-image:url("hover.gif");cursor:pointer;}
+#friend_selector ul li:hover span.frame img{border-color:#3b5998}
+#friend_selector ul li span.frame{float:left;width:56px;height:56px;margin:4px 0 0 4px;position:relative;}
+#friend_selector ul li span.frame img{padding:2px;border:1px solid #e0e0e0}
+#friend_selector ul li span.frame span.check{display:none;width:14px;height:14px;position:absolute;left:3px;bottom:3px;background-image:url("check.gif")}
+#friend_selector ul li span.name{display:inline-block;padding:8px 8px 0 8px;width:54px;overflow:hidden;text-overflow:ellipsis}
+#friend_selector ul li.selected,#friend_selector ul li.selected:hover{background-image:url("selected.gif");color:#fff;}
+#friend_selector ul li.selected span.frame,#friend_selector ul li.selected:hover span.frame{background-color:#8497c0;}
+#friend_selector ul li.selected span.frame img,#friend_selector ul li.selected:hover span.frame img{border-color:#b1c1e1}
+#friend_selector ul li.selected span.frame span.check,#friend_selector ul li.selected:hover span.frame span.check{display:block}
+#friend_selector a.form_button, #friend_selector a.form_button:visited{text-decoration:none;float:right;margin:10px;font-size:13px;display:inline-block;color:#fff;width:auto;height:25px;line-height:23px;padding:0 6px;font-weight:bold;color:#fff;background:transparent url("sprite2.png") repeat-x 0 -48px;border:1px solid #000;border-top-color:#29447e;border-right-color:#29447e;border-bottom-color:#1a356e;border-left-color:#29447e;-webkit-box-shadow:rgba(0,0,0,0.10) 0 1px 0 0;cursor:pointer;}

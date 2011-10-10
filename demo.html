@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>Facebook Friend Selector jQuery Plugin</title>
+    <link rel="stylesheet" href="jquery.fb.css">
+    <style>
+        body{
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            margin: 2em;
+        }
+    </style>
+    <script src="jquery-1.6.4.min.js"></script>
+    <script src="jquery.fb.dialog.js"></script>
+    <script src="jquery.fb.friend-selector.js"></script>
+    <script src="facebook-friends.js"></script>
+    <script>
+        $(function() {
+            selectedFriends = [];
+            $('a')
+                .click(function(e) {
+                    e.preventDefault();
+                    // To use, just call the fbFriendSelector() function on a jQuery object and pass it two arguments:
+                    // 1.) The JSON data returned from a https://graph.facebook.com/me/friends?access_token=abc API call
+                    // 2.) An array of Facebook IDs for those friends that should have initial state of selected
+                    $(this).fbFriendSelector(friends.data, selectedFriends);
+                })
+                // When the dialog is closed, it fires a 'friendSelection' event, which you should bind to
+                // The event 'data' is an array of objects in form {name: 'First Last', id: 123}
+                .bind('friendSelection', function(e, data) {
+                    friendString = ''
+                    selectedFriends = [];
+                    $.each(data, function() {
+                        friendString += this.name+', ';
+                        selectedFriends.push(this.id);
+                    });
+                    if(selectedFriends.length) {
+                        alert('You selected: '+friendString.substring(0, friendString.length - 2));
+                    }
+                });
+        });
+    </script>
+</head>
+<body>
+    <h1>Facebook Friend Selector jQuery Plugin</h1>
+    <a href="#">Demo it!</a>
+</body>
+</html>
