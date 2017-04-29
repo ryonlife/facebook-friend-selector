@@ -1,4 +1,4 @@
-(function($) {
+(($ => {
     
   // Facebook-looking dialog widget
   $.fn.fbDialog = function(title) {
@@ -19,4 +19,4 @@
     return this;
   };
   
-})(jQuery);
+}))(jQuery);

@@ -1,4 +1,4 @@
-(function($) {
+(($ => {
   // Facebook-looking friend selector widget
   $.fn.fbFriendSelector = function(friends, selectedFriends) {
     // Setup
@@ -34,7 +34,7 @@
       .css({
         left: -1 * ($clear.offset().left - 7 - $fss.offset().left - $fss.width())
       })
-      .click(function() {
+      .click(() => {
         $fss
           .val('')
           .trigger('keyup');
@@ -42,13 +42,13 @@
       });
 
     // Show selected friends
-    $showSelected.click(function() {
+    $showSelected.click(() => {
       if(!$showSelected.hasClass('highlight')) {
         $showAll.removeClass('highlight');
         $showSelected.addClass('highlight');
         $clear.trigger('click');
         $fsf.find('li').hide();
-        $.each(friends, function(i, friend) {
+        $.each(friends, (i, friend) => {
           if(friend.name.search(new RegExp($fss.val(), 'i')) != -1) {
             var $friend = $fsf.find('li[data-friend-id="'+friend.id+'"]');
             if ($friend.hasClass('selected')) {
@@ -61,7 +61,7 @@
     });
 
     // Show all friends
-    $showAll.click(function() {
+    $showAll.click(() => {
       if(!$showAll.hasClass('highlight')) {
         $showSelected.removeClass('highlight');
         $showAll.addClass('highlight');
@@ -84,15 +84,15 @@
 
     // Search for friends
     $fss
-      .keyup(function() {
+      .keyup(() => {
         $fsf.find('li').hide();
-        $.each(friends, function(i, friend) {
+        $.each(friends, (i, friend) => {
           if(friend.name.search(new RegExp($fss.val(), 'i')) != -1) {
             $fsf.find('li[data-friend-id="'+friend.id+'"]').show();
           }
         });
       })
-      .focus(function() {
+      .focus(() => {
         $showAll.trigger('click');
       });
 
@@ -110,7 +110,7 @@
     });
 
     // Close button
-    $fs.find('.form_button').click(function() {
+    $fs.find('.form_button').click(() => {
 
       friends = [];
       $fsf.find('li.selected').each(function() {
@@ -133,4 +133,4 @@
 
     return $fs;
   };
-})(jQuery);
+}))(jQuery);
